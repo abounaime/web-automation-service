@@ -1,10 +1,8 @@
-import express from "express";
-import { Response } from "express";
-import { request } from "express";
+import express,  { Response, Request } from "express";
 const app = express();
 app.use(express.json());
 
-app.get('/health', (req : request, res: Response) => {
+app.get('/health', (req : Request, res: Response) => {
   res.send({ status : 'ok'})
 });
 
