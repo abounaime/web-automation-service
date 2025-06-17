@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "npm run clean & tsc",
+    "clean": "rimraf dist",
+    "start": "node dist/src/server.js",
+    "dev": "nodemon --exec npx ts-node src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,9 +20,12 @@
     "playwright": "^1.52.0"
   },
   "devDependencies": {
+    "@types/express": "^5.0.3",
     "@types/jest": "^29.5.14",
+    "@types/supertest": "^6.0.3",
     "jest": "^30.0.0",
     "nodemon": "^3.1.10",
+    "rimraf": "^6.0.1",
     "supertest": "^7.1.1",
     "ts-jest": "^29.4.0",
     "typescript": "^5.8.3"
